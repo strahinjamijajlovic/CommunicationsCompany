@@ -7,6 +7,6 @@ namespace CommunicationsCompany.Domain.Entities
     public class MainHub
     {
         public virtual long Id { get; set; }
-        public virtual IList<CommNode> CommNodes { get; set; }
+        public virtual ICollection<CommNode> CommNodes { get; set; }
     }
 }

@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class LegalEntityMap : ClassMap<LegalEntity>
     {
+        public LegalEntityMap()
+        {
+
+            Table("LegalEntities");
+        }
     }
 }

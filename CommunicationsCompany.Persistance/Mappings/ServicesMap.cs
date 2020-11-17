@@ -6,12 +6,12 @@ using System.Text;
 
 namespace CommunicationsCompany.Persistance.Mappings
 {
-    public class PhoneNumberMap : ClassMap<PhoneNumber>
+    public class ServicesMap : ClassMap<Services>
     {
-        public PhoneNumberMap()
+        public ServicesMap()
         {
 
-            Table("PhoneNumbers");
+            Table("Services");
         }
     }
 }

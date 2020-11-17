@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class UserMap : ClassMap<User>
     {
+        public UserMap()
+        {
+
+            Table("Users");
+        }
     }
 }

@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class ExtraProgramMap : ClassMap<ExtraProgram>
     {
+        public ExtraProgramMap()
+        {
+
+            Table("ExtraProgrammes");
+        }
     }
 }

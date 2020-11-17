@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class MainHubMap : ClassMap<MainHub>
     {
+        public MainHubMap()
+        {
+
+            Table("MainHubs");
+        }
     }
 }

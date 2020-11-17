@@ -8,5 +8,9 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class CommNodeMap : ClassMap<CommNode>
     {
+        public CommNodeMap()
+        {
+            Table("CommNodes");
+        }
     }
 }

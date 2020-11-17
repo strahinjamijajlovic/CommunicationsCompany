@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class DeviceMap : ClassMap<Device>
     {
+        public DeviceMap()
+        {
+
+            Table("Devices");
+        }
     }
 }

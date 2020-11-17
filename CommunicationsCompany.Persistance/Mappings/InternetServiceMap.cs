@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class InternetServiceMap : ClassMap<ExtraProgram>
     {
+        public InternetServiceMap()
+        {
+
+            Table("InternetServices");
+        }
     }
 }

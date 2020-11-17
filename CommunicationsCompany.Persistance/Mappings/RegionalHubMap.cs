@@ -8,5 +8,10 @@ namespace CommunicationsCompany.Persistance.Mappings
 {
     public class RegionalHubMap : ClassMap<RegionalHub>
     {
+        public RegionalHubMap()
+        {
+
+            Table("RegionalHubs");
+        }
     }
 }
