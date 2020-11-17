@@ -6,14 +6,14 @@ using System.Text;
 
 namespace CommunicationsCompany.Persistance.Mappings
 {
-    public class ExtraProgramMap : ClassMap<ExtraProgram>
+    public class StaticIpMap : ClassMap<StaticIp>
     {
-        public ExtraProgramMap()
+        public StaticIpMap()
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
-            Map(x => x.Name).Not.Nullable().Length(50);
+            Map(x => x.IpAddress).Not.Nullable().Length(20);
 
-            Table("ExtraProgrammes");
+            Table("StaticIps");
         }
     }
 }
