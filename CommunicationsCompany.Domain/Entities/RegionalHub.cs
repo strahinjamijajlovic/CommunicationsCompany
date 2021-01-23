@@ -8,7 +8,7 @@ namespace CommunicationsCompany.Domain.Entities
     {
         public virtual long Id { get; set; }
         public virtual string RegionName { get; set; }
-        public virtual long MainHubId { get; set; }
-        public virtual MainHub MainHub { get; set; }
+        public virtual Device Device { get; set; }
+        public virtual ICollection<MainHub> MainHubs { get; set; }
     }
 }

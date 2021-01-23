@@ -10,6 +10,12 @@ namespace CommunicationsCompany.Persistance.Mappings
     {
         public LegalEntityMap()
         {
+            Id(x => x.Id).Column("Id").GeneratedBy.Increment();
+            Map(x => x.FaxNumber).Not.Nullable().Length(20);
+            Map(x => x.PIB).Not.Nullable().Length(20);
+
+            References(x => x.ContactPerson, "ContactPersonId");
+            References(x => x.Services, "ServicesId");
 
             Table("LegalEntities");
         }

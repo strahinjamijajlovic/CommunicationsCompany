@@ -10,6 +10,11 @@ namespace CommunicationsCompany.Persistance.Mappings
     {
         public PhoneNumberMap()
         {
+            Id(x => x.Id).Column("Id").GeneratedBy.Increment();
+            Map(x => x.Number).Not.Nullable().Length(20);
+            Map(x => x.MinutesCount).Not.Nullable();
+
+            References(x => x.Service, "ServiceId");
 
             Table("PhoneNumbers");
         }

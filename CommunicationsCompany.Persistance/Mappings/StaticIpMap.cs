@@ -12,6 +12,7 @@ namespace CommunicationsCompany.Persistance.Mappings
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
             Map(x => x.IpAddress).Not.Nullable().Length(20);
+            References(x => x.InternetService, "InternetServiceId");
 
             Table("StaticIps");
         }

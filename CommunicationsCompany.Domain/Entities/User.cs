@@ -9,5 +9,6 @@ namespace CommunicationsCompany.Domain.Entities
         public virtual long Id { get; set; }
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
+        public virtual CommNode CommNode { get; set; }
     }
 }

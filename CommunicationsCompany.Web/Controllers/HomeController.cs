@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CommunicationsCompany.Web.Models;
+using NHibernate;
+using CommunicationsCompany.Domain.Repositories;
+using CommunicationsCompany.Domain.Entities;
 
 namespace CommunicationsCompany.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IDeviceRepository _deviceRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IDeviceRepository deviceRepository)
         {
             _logger = logger;
+            _deviceRepository = deviceRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             return View();
         }

@@ -8,5 +8,6 @@ namespace CommunicationsCompany.Domain.Entities
     {
         public virtual long Id { get; set; }
         public virtual string IpAddress { get; set; }
+        public virtual InternetService InternetService { get; set; }
     }
 }

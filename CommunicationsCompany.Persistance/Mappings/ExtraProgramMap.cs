@@ -13,6 +13,8 @@ namespace CommunicationsCompany.Persistance.Mappings
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
             Map(x => x.Name).Not.Nullable().Length(50);
 
+            References(x => x.Service, "ServiceId");
+
             Table("ExtraProgrammes");
         }
     }

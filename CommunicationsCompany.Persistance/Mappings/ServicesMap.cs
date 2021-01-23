@@ -10,6 +10,12 @@ namespace CommunicationsCompany.Persistance.Mappings
     {
         public ServicesMap()
         {
+            Id(x => x.Id).Column("Id").GeneratedBy.Increment();
+
+            References(x => x.InternetService, "InternetServiceId");
+
+            HasMany(x => x.PhoneNumbers).KeyColumn("ServiceId").Inverse().Cascade.SaveUpdate();
+            HasMany(x => x.ExtraTvPrograms).KeyColumn("ServiceId").Inverse().Cascade.SaveUpdate();
 
             Table("Services");
         }
