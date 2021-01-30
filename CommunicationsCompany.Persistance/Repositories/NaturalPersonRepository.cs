@@ -1,31 +1,38 @@
 ﻿using CommunicationsCompany.Domain.Entities;
 using CommunicationsCompany.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace CommunicationsCompany.Persistance.Repositories
 {
-    public class DeviceRepository : IDeviceRepository
+    public class NaturalPersonRepository : INaturalPersonRepository
     {
         private readonly ISession _session;
-        private readonly ILogger<DeviceRepository> _logger;
+        private readonly ILogger<NaturalPersonRepository> _logger;
 
-        public DeviceRepository(ISession session, ILogger<DeviceRepository> logger)
+        public NaturalPersonRepository(ISession session, ILogger<NaturalPersonRepository> logger)
         {
             _session = session;
             _logger = logger;
         }
+        public async Task<NaturalPerson> Load(long id)
+        {
+            using var transaction = _session.BeginTransaction();
+            NaturalPerson naturalPerson = await _session.GetAsync<NaturalPerson>(id);
+            transaction.Commit();
+            return naturalPerson;
+        }
 
-        public async Task Save(Device device)
+        public async Task Save(NaturalPerson naturalPerson)
         {
             using var transaction = _session.BeginTransaction();
             try
             {
-                await _session.SaveAsync(device);
+                await _session.SaveAsync(naturalPerson);
                 transaction.Commit();
             }
             catch (Exception e)
@@ -36,16 +43,8 @@ namespace CommunicationsCompany.Persistance.Repositories
             finally
             {
                 if (transaction != null)
-                    transaction.Dispose(); //just in case
+                    transaction.Dispose();
             }
-        }
-
-        public async Task<Device> Load(long id)
-        {
-            using var transaction = _session.BeginTransaction();
-            Device device = await _session.GetAsync<Device>(id);
-            transaction.Commit();
-            return device;
         }
     }
 }

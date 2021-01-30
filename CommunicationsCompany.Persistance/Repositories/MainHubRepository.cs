@@ -1,31 +1,38 @@
 ﻿using CommunicationsCompany.Domain.Entities;
 using CommunicationsCompany.Domain.Repositories;
+using Microsoft.Extensions.Logging;
 using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace CommunicationsCompany.Persistance.Repositories
 {
-    public class DeviceRepository : IDeviceRepository
+    public class MainHubRepository : IMainHubRepository
     {
         private readonly ISession _session;
-        private readonly ILogger<DeviceRepository> _logger;
+        private readonly ILogger<MainHubRepository> _logger;
 
-        public DeviceRepository(ISession session, ILogger<DeviceRepository> logger)
+        public MainHubRepository(ISession session, ILogger<MainHubRepository> logger)
         {
             _session = session;
             _logger = logger;
         }
+        public async Task<MainHub> Load(long id)
+        {
+            using var transaction = _session.BeginTransaction();
+            MainHub mainHub = await _session.GetAsync<MainHub>(id);
+            transaction.Commit();
+            return mainHub;
+        }
 
-        public async Task Save(Device device)
+        public async Task Save(MainHub mainHub)
         {
             using var transaction = _session.BeginTransaction();
             try
             {
-                await _session.SaveAsync(device);
+                await _session.SaveAsync(mainHub);
                 transaction.Commit();
             }
             catch (Exception e)
@@ -36,16 +43,8 @@ namespace CommunicationsCompany.Persistance.Repositories
             finally
             {
                 if (transaction != null)
-                    transaction.Dispose(); //just in case
+                    transaction.Dispose();
             }
-        }
-
-        public async Task<Device> Load(long id)
-        {
-            using var transaction = _session.BeginTransaction();
-            Device device = await _session.GetAsync<Device>(id);
-            transaction.Commit();
-            return device;
         }
     }
 }
