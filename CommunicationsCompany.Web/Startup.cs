@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CommunicationsCompany.Application.Services;
 using CommunicationsCompany.Domain.Repositories;
+using CommunicationsCompany.Infrastructure.Services;
 using CommunicationsCompany.Persistance.Mappings;
 using CommunicationsCompany.Persistance.Repositories;
 using FluentNHibernate.Cfg;
@@ -73,6 +75,9 @@ namespace CommunicationsCompany.Web
             services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
             services.AddScoped<IRegionalHubRepository, RegionalHubRepository>();
             services.AddScoped<IServicesRepository, ServicesRepository>();
+
+            services.AddScoped<IUsersService, UsersService>();
+            services.AddScoped<ICommNodesService, CommNodesService>();
 
             services.AddSwaggerGen();
         }

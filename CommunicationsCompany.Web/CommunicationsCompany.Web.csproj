@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CommunicationsCompany.Application\CommunicationsCompany.Application.csproj" />
+    <ProjectReference Include="..\CommunicationsCompany.Infrastructure\CommunicationsCompany.Infrastructure.csproj" />
     <ProjectReference Include="..\CommunicationsCompany.Persistance\CommunicationsCompany.Persistance.csproj" />
   </ItemGroup>
 

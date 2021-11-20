@@ -6,7 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Settings\" />
-    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommunicationsCompany.Application\CommunicationsCompany.Application.csproj" />
   </ItemGroup>
 
 </Project>
