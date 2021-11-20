@@ -14,7 +14,7 @@ namespace CommunicationsCompany.Persistance.Mappings
             Map(x => x.Number).Not.Nullable().Length(20);
             Map(x => x.MinutesCount).Not.Nullable();
 
-            References(x => x.Service, "ServiceId");
+            References(x => x.Service, "ServiceId").Cascade.All();
 
             Table("PhoneNumbers");
         }

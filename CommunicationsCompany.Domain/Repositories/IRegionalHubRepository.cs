@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace CommunicationsCompany.Domain.Repositories
 {
-    public interface IDeviceRepository
+    public interface IRegionalHubRepository
     {
-        public Task Save(Device entity);
-        public Task<Device> Load(long id);        
+        public Task Add(RegionalHub entity);
+
+        public Task<RegionalHub> Find(long id);
+
+
+        public Task Remove(RegionalHub entity);
     }
 }

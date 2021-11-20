@@ -13,7 +13,7 @@ namespace CommunicationsCompany.Persistance.Mappings
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
             Map(x => x.RegionName).Not.Nullable().Length(50);
 
-            References(x => x.Device, "DeviceId");
+            References(x => x.Device, "DeviceId").Cascade.All();
 
             HasMany(x => x.MainHubs).KeyColumn("RegionalHubId").Inverse().Cascade.SaveUpdate();
 

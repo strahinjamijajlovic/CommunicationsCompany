@@ -11,6 +11,6 @@ namespace CommunicationsCompany.Domain.Entities
         public virtual DateTime? LastPaymentDate { get; set; }
         public virtual float? AccountBalance { get; set; }
         public virtual bool FlatRate { get; set; }
-        public virtual ICollection<StaticIp> StaticIPs { get; set; }
+        public virtual ISet<StaticIp> StaticIPs { get; set; } = new HashSet<StaticIp>();
     }
 }

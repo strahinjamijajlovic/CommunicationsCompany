@@ -14,9 +14,9 @@ namespace CommunicationsCompany.Persistance.Mappings
             Map(x => x.JMBG).Not.Nullable().Length(13);
             Map(x => x.ContactNumber).Not.Nullable().Length(20);
 
-            References(x => x.User, "UserId");
-            References(x => x.Address, "AddressId");
-            References(x => x.Services, "ServicesId");
+            References(x => x.User, "UserId").Cascade.All();
+            References(x => x.Address, "AddressId").Cascade.All();
+            References(x => x.Services, "ServicesId").Cascade.All();
 
             Table("NaturalPersons");
         }

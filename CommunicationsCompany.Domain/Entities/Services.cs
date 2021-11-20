@@ -8,7 +8,7 @@ namespace CommunicationsCompany.Domain.Entities
     {
         public virtual long Id { get; set; }
         public virtual InternetService InternetService { get; set; }
-        public virtual ICollection<PhoneNumber> PhoneNumbers { get; set; }
-        public virtual ICollection<ExtraProgram> ExtraTvPrograms { get; set; }
+        public virtual ISet<PhoneNumber> PhoneNumbers { get; set; } = new HashSet<PhoneNumber>();
+        public virtual ISet<ExtraProgram> ExtraTvPrograms { get; set; } = new HashSet<ExtraProgram>();
     }
 }

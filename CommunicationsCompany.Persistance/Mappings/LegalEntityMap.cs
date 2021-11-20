@@ -14,8 +14,8 @@ namespace CommunicationsCompany.Persistance.Mappings
             Map(x => x.FaxNumber).Not.Nullable().Length(20);
             Map(x => x.PIB).Not.Nullable().Length(20);
 
-            References(x => x.ContactPerson, "ContactPersonId");
-            References(x => x.Services, "ServicesId");
+            References(x => x.ContactPerson, "ContactPersonId").Cascade.All();
+            References(x => x.Services, "ServicesId").Cascade.All();
 
             Table("LegalEntities");
         }

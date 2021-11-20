@@ -12,10 +12,10 @@ namespace CommunicationsCompany.Persistance.Mappings
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
 
-            References(x => x.Device, "DeviceId");
-            References(x => x.RegionalHub, "RegionalHubId");
+            References(x => x.Device, "DeviceId").Cascade.All();
+            References(x => x.RegionalHub, "RegionalHubId").Cascade.All();
 
-            HasMany(x => x.CommNodes).KeyColumn("MainHubId").Inverse().Cascade.SaveUpdate();
+            HasMany(x => x.CommNodes).KeyColumn("MainHubId").Inverse().Cascade.All();
 
             Table("MainHubs");
         }

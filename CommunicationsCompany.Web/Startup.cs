@@ -67,7 +67,12 @@ namespace CommunicationsCompany.Web
                     .OpenSession()
             );
 
-            services.AddScoped<IDeviceRepository, DeviceRepository>();
+            services.AddScoped<ICommNodeRepository, CommNodeRepository>();
+            services.AddScoped<ILegalEntityRepository, LegalEntityRepository>();
+            services.AddScoped<IMainHubRepository, MainHubRepository>();
+            services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
+            services.AddScoped<IRegionalHubRepository, RegionalHubRepository>();
+            services.AddScoped<IServicesRepository, ServicesRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
