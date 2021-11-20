@@ -24,6 +24,7 @@ namespace CommunicationsCompany.Web.Controllers
             _mainHubRepository = mainHubRepository;
         }
 
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var mainHub = new MainHub
@@ -71,15 +72,17 @@ namespace CommunicationsCompany.Web.Controllers
                         MainHub = mainHub
                     }
                 };
-            await _mainHubRepository.Add(mainHub);
+            //await _mainHubRepository.Add(mainHub);
             return View();
         }
 
+        [HttpGet]
         public IActionResult Privacy()
         {
             return View();
         }
 
+        [HttpGet]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

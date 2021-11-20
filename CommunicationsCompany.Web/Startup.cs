@@ -73,6 +73,8 @@ namespace CommunicationsCompany.Web
             services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
             services.AddScoped<IRegionalHubRepository, RegionalHubRepository>();
             services.AddScoped<IServicesRepository, ServicesRepository>();
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +83,8 @@ namespace CommunicationsCompany.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             else
             {
