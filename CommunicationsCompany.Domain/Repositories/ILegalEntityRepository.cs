@@ -13,7 +13,6 @@ namespace CommunicationsCompany.Domain.Repositories
 
         public Task<LegalEntity> Find(long id);
 
-
-        public Task Remove(LegalEntity entity);
+        public Task Remove(long id);
     }
 }

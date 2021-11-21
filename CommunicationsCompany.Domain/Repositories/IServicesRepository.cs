@@ -12,7 +12,6 @@ namespace CommunicationsCompany.Domain.Repositories
 
         public Task<Services> Find(long id);
 
-
-        public Task Remove(Services entity);
+        public Task Remove(long id);
     }
 }

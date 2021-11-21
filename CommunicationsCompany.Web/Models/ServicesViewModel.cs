@@ -5,8 +5,7 @@ using System.Threading.Tasks;
 
 namespace CommunicationsCompany.Web.Models
 {
-    public class RegionalHubViewModel
+    public class ServicesViewModel
     {
-        public long Id { get; set; }
     }
 }

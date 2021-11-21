@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using CommunicationsCompany.Application.Services;
 using CommunicationsCompany.Domain.Repositories;
-using CommunicationsCompany.Infrastructure.Services;
 using CommunicationsCompany.Persistance.Mappings;
 using CommunicationsCompany.Persistance.Repositories;
 using FluentNHibernate.Cfg;
@@ -16,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
+using AutoMapper;
+using AutoMapper.EquivalencyExpression;
 
 namespace CommunicationsCompany.Web
 {
@@ -76,10 +77,11 @@ namespace CommunicationsCompany.Web
             services.AddScoped<IRegionalHubRepository, RegionalHubRepository>();
             services.AddScoped<IServicesRepository, ServicesRepository>();
 
-            services.AddScoped<IUsersService, UsersService>();
-            services.AddScoped<ICommNodesService, CommNodesService>();
-
             services.AddSwaggerGen();
+            services.AddAutoMapper(cfg =>
+            {
+                cfg.AddCollectionMappers();
+            }, AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

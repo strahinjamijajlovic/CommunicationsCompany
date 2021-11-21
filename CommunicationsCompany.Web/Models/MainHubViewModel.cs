@@ -7,5 +7,6 @@ namespace CommunicationsCompany.Web.Models
 {
     public class MainHubViewModel
     {
+        public long Id { get; set; }
     }
 }

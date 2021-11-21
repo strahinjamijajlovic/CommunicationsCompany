@@ -11,8 +11,7 @@ namespace CommunicationsCompany.Domain.Repositories
         public Task Add(CommNode entity);
 
         public Task<CommNode> Find(long id);
-
-
-        public Task Remove(CommNode entity);
+        public Task Update(CommNode entity);
+        public Task Remove(long id);
     }
 }

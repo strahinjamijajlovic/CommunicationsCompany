@@ -46,17 +46,28 @@ namespace CommunicationsCompany.Persistance.Repositories
         {
             using (var transaction = _session.BeginTransaction())
             {
-                CommNode device = await _session.GetAsync<CommNode>(id);
-                return device;
+                CommNode entity = await _session.GetAsync<CommNode>(id);
+                return entity;
             }
         }
 
-        public async Task Remove(CommNode entity)
+        public async Task Update(CommNode entity)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                await _session.UpdateAsync(entity);
+                transaction.Commit();
+            }
+
+        }
+
+        public async Task Remove(long id)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
+                    CommNode entity = await _session.GetAsync<CommNode>(id);
                     await _session.DeleteAsync(entity);
                     transaction.Commit();
                 }

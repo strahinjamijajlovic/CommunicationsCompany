@@ -11,8 +11,7 @@ namespace CommunicationsCompany.Domain.Repositories
         public Task Add(MainHub entity);
 
         public Task<MainHub> Find(long id);
-
-
-        public Task Remove(MainHub entity);
+        public Task Update(MainHub entity);
+        public Task Remove(long id);
     }
 }

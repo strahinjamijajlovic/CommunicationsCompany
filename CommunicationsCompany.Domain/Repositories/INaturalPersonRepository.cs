@@ -12,7 +12,6 @@ namespace CommunicationsCompany.Domain.Repositories
 
         public Task<NaturalPerson> Find(long id);
 
-
-        public Task Remove(NaturalPerson entity);
+        public Task Remove(long id);
     }
 }

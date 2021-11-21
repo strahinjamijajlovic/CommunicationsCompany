@@ -25,13 +25,13 @@ namespace CommunicationsCompany.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(LegalEntityViewModel vm)
+        public async Task<IActionResult> Create(ServicesViewModel vm)
         {
             return Ok();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(CommNodeViewModel vm)
+        public async Task<IActionResult> Update(ServicesViewModel vm)
         {
             return Ok();
         }

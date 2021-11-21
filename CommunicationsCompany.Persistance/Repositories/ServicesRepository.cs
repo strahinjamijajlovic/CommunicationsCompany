@@ -46,17 +46,18 @@ namespace CommunicationsCompany.Persistance.Repositories
         {
             using (var transaction = _session.BeginTransaction())
             {
-                Services device = await _session.GetAsync<Services>(id);
-                return device;
+                Services entity = await _session.GetAsync<Services>(id);
+                return entity;
             }
         }
 
-        public async Task Remove(Services entity)
+        public async Task Remove(long id)
         {
             using (var transaction = _session.BeginTransaction())
             {
                 try
                 {
+                    Services entity = await _session.GetAsync<Services>(id);
                     await _session.DeleteAsync(entity);
                     transaction.Commit();
                 }
