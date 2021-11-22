@@ -7,5 +7,6 @@ namespace CommunicationsCompany.Web.Models
 {
     public class NaturalPersonViewModel
     {
+        public long Id { get; set; }
     }
 }

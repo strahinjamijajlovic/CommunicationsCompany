@@ -50,6 +50,15 @@ namespace CommunicationsCompany.Persistance.Repositories
                 return entity;
             }
         }
+        public async Task Update(Services entity)
+        {
+            using (var transaction = _session.BeginTransaction())
+            {
+                await _session.UpdateAsync(entity);
+                transaction.Commit();
+            }
+
+        }
 
         public async Task Remove(long id)
         {

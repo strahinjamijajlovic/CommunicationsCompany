@@ -7,5 +7,6 @@ namespace CommunicationsCompany.Web.Models
 {
     public class LegalEntityViewModel
     {
+        public long Id { get; set; }
     }
 }

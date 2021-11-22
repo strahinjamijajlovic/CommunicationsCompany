@@ -9,9 +9,8 @@ namespace CommunicationsCompany.Domain.Repositories
     public interface IServicesRepository
     {
         public Task Add(Services entity);
-
         public Task<Services> Find(long id);
-
+        public  Task Update(Services entity);
         public Task Remove(long id);
     }
 }

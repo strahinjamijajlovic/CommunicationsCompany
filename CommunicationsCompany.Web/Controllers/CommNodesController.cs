@@ -16,19 +16,16 @@ namespace CommunicationsCompany.Web.Controllers
     {
         private readonly ICommNodeRepository _commNodeRepo;
         private readonly IMainHubRepository _mainHubRepo;
-        private readonly IRegionalHubRepository _regionalHubRepo;
         private readonly IMapper _mapper;
         private readonly ILogger<CommNodesController> _logger;
 
         public CommNodesController(ICommNodeRepository commNodeRepo, 
             IMainHubRepository mainHubRepo, 
-            IRegionalHubRepository regionalHubRepo,
             IMapper mapper,
             ILogger<CommNodesController> logger)
         {
             _commNodeRepo = commNodeRepo;
             _mainHubRepo = mainHubRepo;
-            _regionalHubRepo = regionalHubRepo;
             _mapper = mapper;
             _logger = logger;
         }
@@ -66,7 +63,7 @@ namespace CommunicationsCompany.Web.Controllers
                 return Ok();
             }
 
-            return Ok();
+            return BadRequest();
         }
 
         [HttpPost]
@@ -85,7 +82,7 @@ namespace CommunicationsCompany.Web.Controllers
                 return Ok();
             }
 
-            return Ok();
+            return BadRequest();
         }
 
         [HttpDelete("{id}")]

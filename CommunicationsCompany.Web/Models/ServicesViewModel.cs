@@ -7,5 +7,6 @@ namespace CommunicationsCompany.Web.Models
 {
     public class ServicesViewModel
     {
+        public long Id {get; set;}
     }
 }

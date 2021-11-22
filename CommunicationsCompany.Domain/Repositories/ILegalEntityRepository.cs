@@ -10,9 +10,8 @@ namespace CommunicationsCompany.Domain.Repositories
     public interface ILegalEntityRepository
     {
         public Task Add(LegalEntity entity);
-
         public Task<LegalEntity> Find(long id);
-
+        public Task Update(LegalEntity entity);
         public Task Remove(long id);
     }
 }
