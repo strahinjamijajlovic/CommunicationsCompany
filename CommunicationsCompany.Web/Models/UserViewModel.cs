@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace CommunicationsCompany.Web.Models
 {
-    public class RegionalHubViewModel
+    public class UserViewModel
     {
         public long Id { get; set; }
-        public string RegionName { get; set; } = string.Empty;
-        public DeviceViewModel Device { get; set; }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public long CommNode { get; set; }
     }
 }
