@@ -16,7 +16,7 @@ namespace CommunicationsCompany.Persistance.Mappings
             Map(x => x.AccountBalance).Nullable();
             Map(x => x.FlatRate).Not.Nullable();
 
-            HasMany(x => x.StaticIPs).KeyColumn("InternetServiceId").Inverse().Cascade.AllDeleteOrphan();
+            HasMany(x => x.StaticIPs).KeyColumn("InternetServiceId").Cascade.AllDeleteOrphan();
 
             Table("InternetServices");
         }

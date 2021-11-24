@@ -8,6 +8,7 @@ namespace CommunicationsCompany.Domain.Entities
     {
         public virtual long Id { get; set; }
         public virtual string Name { get; set; }
+        public virtual long ServiceId { get; set; }
         public virtual Services Service { get; set; }
     }
 }

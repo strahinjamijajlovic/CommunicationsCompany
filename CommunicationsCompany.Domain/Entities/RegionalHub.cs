@@ -8,6 +8,7 @@ namespace CommunicationsCompany.Domain.Entities
     {
         public virtual long Id { get; set; }
         public virtual string RegionName { get; set; }
+        public virtual long DeviceId { get; set; }
         public virtual Device Device { get; set; }
         public virtual ISet<MainHub> MainHubs { get; set; } = new HashSet<MainHub>();
     }

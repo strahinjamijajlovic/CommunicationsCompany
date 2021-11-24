@@ -14,8 +14,8 @@ namespace CommunicationsCompany.Persistance.Mappings
 
             References(x => x.InternetService, "InternetServiceId").Cascade.All();
 
-            HasMany(x => x.PhoneNumbers).KeyColumn("ServiceId").Inverse().Cascade.All();
-            HasMany(x => x.ExtraTvPrograms).KeyColumn("ServiceId").Inverse().Cascade.All();
+            HasMany(x => x.PhoneNumbers).KeyColumn("ServiceId").Cascade.All();
+            HasMany(x => x.ExtraTvPrograms).KeyColumn("ServiceId").Cascade.All();
 
             Table("Services");
         }
