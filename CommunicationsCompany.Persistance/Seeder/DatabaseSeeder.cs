@@ -50,6 +50,9 @@ namespace CommunicationsCompany.Persistance.Seeder
                             ManufacturerName = "Manufacturer"
                         },
                     };
+
+                    await _session.SaveAsync(mainHub);
+
                     for (int j = 0; j < 10; j++)
                     {
                         var commNode = new CommNode

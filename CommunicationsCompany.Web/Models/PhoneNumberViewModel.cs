@@ -7,5 +7,8 @@ namespace CommunicationsCompany.Web.Models
 {
     public class PhoneNumberViewModel
     {
+        public virtual long Id { get; set; }
+        public virtual string Number { get; set; }
+        public virtual int MinutesCount { get; set; }
     }
 }

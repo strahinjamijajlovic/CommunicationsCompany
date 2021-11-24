@@ -14,6 +14,7 @@ namespace CommunicationsCompany.Persistance.Mappings
             Map(x => x.Street).Length(100);
             Map(x => x.ApartmentNumber);
             Map(x => x.City);
+
             Table("Address");
         }
     }
