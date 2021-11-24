@@ -15,7 +15,7 @@ namespace CommunicationsCompany.Persistance.Mappings
 
             References(x => x.Device, "DeviceId").Cascade.All();
 
-            HasMany(x => x.MainHubs).KeyColumn("RegionalHubId").Inverse().Cascade.SaveUpdate();
+            HasMany(x => x.MainHubs).KeyColumn("RegionalHubId").Cascade.SaveUpdate();
 
             Table("RegionalHubs");
         }
