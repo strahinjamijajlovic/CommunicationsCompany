@@ -16,6 +16,7 @@ using NHibernate;
 using NHibernate.Tool.hbm2ddl;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
+using CommunicationsCompany.Persistance.Seeder;
 
 namespace CommunicationsCompany.Web
 {
@@ -75,6 +76,8 @@ namespace CommunicationsCompany.Web
             services.AddScoped<INaturalPersonRepository, NaturalPersonRepository>();
             services.AddScoped<IRegionalHubRepository, RegionalHubRepository>();
             services.AddScoped<IServicesRepository, ServicesRepository>();
+
+            services.AddScoped<DatabaseSeeder>();
 
             services.AddSwaggerGen();
             services.AddAutoMapper(cfg =>
