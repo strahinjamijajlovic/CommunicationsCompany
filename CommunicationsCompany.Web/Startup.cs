@@ -17,6 +17,9 @@ using NHibernate.Tool.hbm2ddl;
 using AutoMapper;
 using AutoMapper.EquivalencyExpression;
 using CommunicationsCompany.Persistance.Seeder;
+using System.Reflection;
+using System.IO;
+using Microsoft.OpenApi.Models;
 
 namespace CommunicationsCompany.Web
 {
@@ -93,7 +96,11 @@ namespace CommunicationsCompany.Web
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My service");
+                    c.RoutePrefix = string.Empty;  // Set Swagger UI at apps root
+                });
             }
             else
             {

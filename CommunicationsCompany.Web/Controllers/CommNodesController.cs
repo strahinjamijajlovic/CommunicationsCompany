@@ -42,6 +42,14 @@ namespace CommunicationsCompany.Web.Controllers
             return Ok(vm);
         }
 
+        /// <summary>
+        /// Creates a new Comm Node from the provided ViewModel
+        /// </summary>
+        /// <remarks>Showcasing API documentation, but this doesn't work since genereting the xml definition gave me problems, and this is not essential for this project</remarks>
+        /// <param name="vm">View Model of the Comm node you want to create</param>
+        /// <response code="200">Comm Node created</response>
+        /// <response code="400">Comm Node has missing/invalid values</response>
+        /// <response code="500">Server error, can't insert your Comm Node</response>
         [HttpPost]
         public async Task<IActionResult> Create(CommNodeViewModel vm)
         {

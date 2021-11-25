@@ -12,8 +12,8 @@ namespace CommunicationsCompany.Persistance.Mappings
         {
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
 
-            HasOne(x => x.Device).ForeignKey("DeviceId").Cascade.All();
-            References(x => x.RegionalHub, "RegionalHubId").Cascade.All();
+            References(x => x.Device, "DeviceId").Cascade.All();
+            References(x => x.RegionalHub, "RegionalHubId").Cascade.SaveUpdate();
 
             HasMany(x => x.CommNodes).KeyColumn("MainHubId").Cascade.All();
 

@@ -13,7 +13,7 @@ namespace CommunicationsCompany.Persistance.Mappings
             Id(x => x.Id).Column("Id").GeneratedBy.Increment();
             Map(x => x.FirstName).Length(50);
             Map(x => x.LastName).Length(50);
-            References(x => x.CommNode, "CommNodeId").Cascade.All();
+            References(x => x.CommNode, "CommNodeId").Cascade.SaveUpdate();
 
             Table("Users");
         }
