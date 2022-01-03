@@ -5,13 +5,20 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationsCompany.Web", "CommunicationsCompany.Web\CommunicationsCompany.Web.csproj", "{3572460E-DDE4-438F-B060-D2B86840389B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationsCompany.Application", "CommunicationsCompany.Application\CommunicationsCompany.Application.csproj", "{80DBFA75-5E6F-49DB-B4D2-97E74711588E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationsCompany.Application", "CommunicationsCompany.Application\CommunicationsCompany.Application.csproj", "{80DBFA75-5E6F-49DB-B4D2-97E74711588E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationsCompany.Domain", "CommunicationsCompany.Domain\CommunicationsCompany.Domain.csproj", "{D10DCE81-D4F7-45D0-BAFE-81F019A0F325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationsCompany.Domain", "CommunicationsCompany.Domain\CommunicationsCompany.Domain.csproj", "{D10DCE81-D4F7-45D0-BAFE-81F019A0F325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationsCompany.Infrastructure", "CommunicationsCompany.Infrastructure\CommunicationsCompany.Infrastructure.csproj", "{B13895F2-9CE5-4CFF-B10E-5040CF565568}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationsCompany.Infrastructure", "CommunicationsCompany.Infrastructure\CommunicationsCompany.Infrastructure.csproj", "{B13895F2-9CE5-4CFF-B10E-5040CF565568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicationsCompany.Persistance", "CommunicationsCompany.Persistance\CommunicationsCompany.Persistance.csproj", "{6B677ACC-03E5-4D3B-8CC8-107D5082081E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommunicationsCompany.Persistance", "CommunicationsCompany.Persistance\CommunicationsCompany.Persistance.csproj", "{6B677ACC-03E5-4D3B-8CC8-107D5082081E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{F33DDEEE-9728-44B2-B0D9-F844415FDB2A}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\Data.sql = Resources\Data.sql
+		Resources\Schema.sql = Resources\Schema.sql
+		Resources\Strahinja Mijajlovic Zadatak.docx = Resources\Strahinja Mijajlovic Zadatak.docx
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
