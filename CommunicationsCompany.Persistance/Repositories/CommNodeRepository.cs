@@ -12,12 +12,10 @@ namespace CommunicationsCompany.Persistance.Repositories
     public class CommNodeRepository : ICommNodeRepository
     {
         private readonly ISession _session;
-        private readonly ILogger<CommNodeRepository> _logger;
 
-        public CommNodeRepository(ISession session, ILogger<CommNodeRepository> logger)
+        public CommNodeRepository(ISession session)
         {
             _session = session;
-            _logger = logger;
         }
 
         public async Task Add(CommNode entity)
@@ -31,7 +29,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding CommNode, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally
@@ -73,7 +70,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding Device, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally

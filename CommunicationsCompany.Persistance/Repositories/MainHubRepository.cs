@@ -12,12 +12,10 @@ namespace CommunicationsCompany.Persistance.Repositories
     public class MainHubRepository : IMainHubRepository
     {
         private readonly ISession _session;
-        private readonly ILogger<MainHubRepository> _logger;
 
-        public MainHubRepository(ISession session, ILogger<MainHubRepository> logger)
+        public MainHubRepository(ISession session)
         {
             _session = session;
-            _logger = logger;
         }
 
         public async Task Add(MainHub entity)
@@ -31,7 +29,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding CommNode, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally
@@ -73,7 +70,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding Device, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally

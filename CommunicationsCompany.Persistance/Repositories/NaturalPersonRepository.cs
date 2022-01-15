@@ -12,12 +12,10 @@ namespace CommunicationsCompany.Persistance.Repositories
     public class NaturalPersonRepository : INaturalPersonRepository
     {
         private readonly ISession _session;
-        private readonly ILogger<NaturalPersonRepository> _logger;
 
-        public NaturalPersonRepository(ISession session, ILogger<NaturalPersonRepository> logger)
+        public NaturalPersonRepository(ISession session)
         {
             _session = session;
-            _logger = logger;
         }
 
         public async Task Add(NaturalPerson entity)
@@ -31,7 +29,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding CommNode, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally
@@ -72,7 +69,6 @@ namespace CommunicationsCompany.Persistance.Repositories
                 }
                 catch (Exception e)
                 {
-                    _logger.LogError("Error adding Device, error: {0}", e.Message);
                     transaction.Rollback();
                 }
                 finally
