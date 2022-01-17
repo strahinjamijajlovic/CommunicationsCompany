@@ -37,7 +37,6 @@ namespace CommunicationsCompany.FormsApp.Forms.Users.LegalEntities
                 MessageBox.Show("Invalid Legal Entity Id.");
                 this.Close();
             }
-
         }
 
         private async void save_Click(object sender, EventArgs e)

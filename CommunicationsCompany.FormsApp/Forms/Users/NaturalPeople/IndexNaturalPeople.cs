@@ -39,7 +39,7 @@ namespace CommunicationsCompany.FormsApp.Forms.Users.NaturalPeople
             if (long.TryParse(deleteId.Text, out var id))
             {
                 await naturalPersonRepository.Remove(id);
-                MessageBox.Show($"Person with the id: {id.ToString()} succesfully deleted.", );
+                MessageBox.Show($"Person with the id: {id} succesfully deleted.");
             }
             else
                 MessageBox.Show("Enter a valid Id");

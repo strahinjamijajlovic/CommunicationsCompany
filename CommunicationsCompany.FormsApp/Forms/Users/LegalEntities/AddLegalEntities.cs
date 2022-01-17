@@ -86,12 +86,12 @@ namespace CommunicationsCompany.FormsApp.Forms.Users.LegalEntities
                                         new PhoneNumber
                                         {
                                             Number = "+381641234567",
-                                            MinutesCount = i
+                                            MinutesCount = 0
                                         },
                                         new PhoneNumber
                                         {
                                             Number = "+381647654321",
-                                            MinutesCount = i * 2
+                                            MinutesCount = 0
                                         },
                                     }
                 }
